@@ -1,0 +1,164 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp1
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int cont50 = 0;
+            int cont100 = 0; 
+            int cont200 = 0;
+            int cont500 = 0;
+            int cont1000=0;
+            int[] monedas = new int[100];
+            int contMonedas = 0;
+            while (true)
+            {
+                System.Console.WriteLine("    ");
+                System.Console.WriteLine("Escoja una opcion");
+                System.Console.WriteLine("A. Cantidad de monedas");
+                System.Console.WriteLine("B. Cuanto dinero tengo");
+                System.Console.WriteLine("C. Cuantas monedas tengo");
+                System.Console.WriteLine("D. Cuantas Dinero tengo en monedas");
+                System.Console.WriteLine("E. Meter moneda");
+                string opcion = System.Console.ReadLine();
+
+                if(opcion != "a" & opcion != "b" & opcion != "c" & opcion != "d" & opcion != "e")
+                {
+                    System.Console.WriteLine(" ");
+                    System.Console.WriteLine("Opcion invalida");
+                }
+                if (opcion == "a")
+                {
+                    System.Console.WriteLine(" ");
+                    int suma = cont50 + cont100 + cont200 + cont500 + cont1000;
+                    System.Console.WriteLine("Tienes "+suma+" monedas");
+                }
+
+                if (opcion == "b")
+                {
+                    System.Console.WriteLine(" ");
+                    int total = cont50*50 + cont100*100 + cont200*200 + cont500*500 + cont1000*1000;
+                    System.Console.WriteLine("Tienes " + total + " pesos");
+                }
+
+                if (opcion == "c")
+                {
+                    System.Console.WriteLine(" ");
+                    System.Console.WriteLine("De que moneda desea saber la cantidad?");
+                    System.Console.WriteLine("1. 50");
+                    System.Console.WriteLine("2. 100");
+                    System.Console.WriteLine("3. 200");
+                    System.Console.WriteLine("4. 500");
+                    System.Console.WriteLine("5. 1000");
+                    int opcionMoneda = System.Convert.ToInt32(System.Console.ReadLine());
+
+                    if (opcionMoneda == 1)
+                    {
+                        System.Console.WriteLine(" ");
+                        System.Console.WriteLine("Tienes "+cont50+ " monedas de 50");
+                    }
+                    if (opcionMoneda == 2)
+                    {
+                        System.Console.WriteLine(" ");
+                        System.Console.WriteLine("Tienes " + cont100 + " monedas de 100");
+                    }
+                    if (opcionMoneda == 3)
+                    {
+                        System.Console.WriteLine(" ");
+                        System.Console.WriteLine("Tienes " + cont200 + " monedas de 200");
+                    }
+                    if (opcionMoneda == 4)
+                    {
+                        System.Console.WriteLine(" ");
+                        System.Console.WriteLine("Tienes " + cont500 + " monedas de 500");
+                    }
+                    if (opcionMoneda == 5)
+                    {
+                        System.Console.WriteLine(" ");
+                        System.Console.WriteLine("Tienes " + cont1000 + " monedas de 1000");
+                    }
+                }
+
+                if (opcion == "d")
+                {
+                    System.Console.WriteLine(" ");
+                    System.Console.WriteLine("De que moneda desea saber la cantidad?");
+                    System.Console.WriteLine("1. 50");
+                    System.Console.WriteLine("2. 100");
+                    System.Console.WriteLine("3. 200");
+                    System.Console.WriteLine("4. 500");
+                    System.Console.WriteLine("5. 1000");
+                    int opcionMoneda = System.Convert.ToInt32(System.Console.ReadLine());
+
+                    if (opcionMoneda == 1)
+                    {
+                        System.Console.WriteLine(" ");
+                        System.Console.WriteLine("Tienes " + cont50*50 + " pesos en monedas de 50");
+                    }
+                    if (opcionMoneda == 2)
+                    {
+                        System.Console.WriteLine(" ");
+                        System.Console.WriteLine("Tienes " + cont100*100 + " pesos en monedas de 100");
+                    }
+                    if (opcionMoneda == 3)
+                    {
+                        System.Console.WriteLine(" ");
+                        System.Console.WriteLine("Tienes " + cont200*200 + " pesos en monedas de 200");
+                    }
+                    if (opcionMoneda == 4)
+                    {
+                        System.Console.WriteLine(" ");
+                        System.Console.WriteLine("Tienes " + cont500*500 + " pesos en monedas de 500");
+                    }
+                    if (opcionMoneda == 5)
+                    {
+                        System.Console.WriteLine(" ");
+                        System.Console.WriteLine("Tienes " + cont1000*1000 + " pesos en monedas de 1000");
+                    }
+                }
+                if (opcion == "e")
+                {
+                    System.Console.WriteLine(" ");
+                    System.Console.WriteLine("Ingrese su moneda a la alcancia");
+                    int moneda = System.Convert.ToInt32(System.Console.ReadLine());
+                    if (moneda == 50 || moneda == 100 || moneda == 200 || moneda == 500 || moneda == 1000)
+                    {
+                        monedas[contMonedas] = moneda;
+                        if (moneda == 50)
+                        {
+                            cont50++;
+                        }
+                        else if (moneda == 100)
+                        {
+                            cont100++;
+                        }
+                        else if (moneda == 200)
+                        {
+                            cont200++;
+                        }
+                        else if (moneda == 500)
+                        {
+                            cont500++;
+                        }
+                        else if (moneda == 1000)
+                        {
+                            cont1000++;
+                        }
+                        contMonedas++;
+                    }
+                    else
+                    {
+                        System.Console.WriteLine(" ");
+                        System.Console.WriteLine("Moneda invalida");
+                    }
+                }
+            }
+        }
+    }
+}
